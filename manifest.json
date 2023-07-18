@@ -1,0 +1,10 @@
+{
+  "name": "Todo List",
+  "description": "Chrome extension to manage your to-do list",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Todo List",
+    "default_popup": "index.html"
+  }
+}
