@@ -97,3 +97,29 @@ body{
 .content .page.active{
     display: block;
 }
+
+
+.content .page-header{
+    height: 60px;
+    border-bottom: solid 1px #d1d1d1da;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.content .page-header .title{
+    font-size: 20px;
+}
+
+.content .page-header .date{
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.content .page-header .date img{
+    width: 14px;
+    position: relative;
+    top: 1px;
+}
