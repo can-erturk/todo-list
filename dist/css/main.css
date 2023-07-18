@@ -81,3 +81,18 @@ body{
     opacity: 1;
     transform: translateX(10px);
 }
+
+.content{
+    flex-grow: 1;
+    position: relative;
+}
+
+.content .page{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.content .page.active{
+    display: block;
+}

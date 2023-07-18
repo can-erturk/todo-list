@@ -8,16 +8,23 @@
 <body>
     <div id="root">
         <aside class="sidebar">
-            <span class="sidebar-item active" data-name="To-do List">
+            <span class="sidebar-item active" data-name="To-do List" data-link="todo">
                 <img src="./dist/img/icons/calendar-check-regular.svg" alt="Calendar icon.">
             </span>
-            <span class="sidebar-item" data-name="Folders">
+            <span class="sidebar-item" data-name="Folders" data-link="folders">
                 <img src="./dist/img/icons/folder-regular.svg" alt="Folder icon.">
             </span>
         </aside>
-        <main class="content">
-            content
+        <main class="content" id="content">
+            <div class="page active" data-page="todo">
+                todo
+            </div>
+            <div class="page" data-page="folders">
+                folders
+            </div>
         </main>
     </div>
+
+    <script src="dist/js/main.js"></script>
 </body>
 </html>
