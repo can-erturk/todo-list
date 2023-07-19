@@ -7,28 +7,57 @@
 </head>
 <body>
     <div id="root">
-        <aside class="sidebar">
-            <span class="sidebar-item active" data-name="To-do List" data-link="todo">
-                <img src="./dist/img/icons/calendar-check.svg" alt="Calendar icon.">
-            </span>
-            <span class="sidebar-item" data-name="Folders" data-link="folders">
-                <img src="./dist/img/icons/folders.svg" alt="Folder icon.">
-            </span>
-        </aside>
-        <main class="content" id="content">
-            <div class="page active" data-page="todo">
-                <div class="page-header">
-                    <span class="title">Todo List</span>
-                    <div class="date">
-                        <img src="./dist/img/icons/calendar-lines-pen.svg" alt="Calendar with pen.">
-                        <span>18.07.2023</span>
-                    </div>
+
+        <aside class="sidebar sidebar-open" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-item active">
+                    <span class="icon">
+                        <img src="./dist/img/icons/folder.svg" alt="">
+                    </span>
+                    <span class="name">
+                        19.07.2023
+                    </span>
                 </div>
+                <div class="sidebar-item">
+                    <span class="icon">
+                        <img src="./dist/img/icons/folder.svg" alt="">
+                    </span>
+                    <span class="name">
+                        20.07.2023
+                    </span>
+                </div>
+                <div class="sidebar-item">
+                    <span class="icon">
+                        <img src="./dist/img/icons/folder.svg" alt="">
+                    </span>
+                    <span class="name">
+                        21.07.2023
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                footer
+            </div>
+        </aside>
+
+        <div class="sidebar-backdrop sidebar-toggle"></div>
+
+        <main class="content" id="content">
+            <div class="header">
+                <span class="sidebar-toggle">
+                    <img src="./dist/img/icons/menu-burger.svg" alt="">
+                </span>
+                <span class="title">To-do List</span>
+            </div>
+            <div class="page active" data-page="todo">
+                todo
             </div>
             <div class="page" data-page="folders">
                 folders
             </div>
         </main>
+
     </div>
 
     <script src="dist/js/main.js"></script>
