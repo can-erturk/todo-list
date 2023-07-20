@@ -80,6 +80,15 @@ body{
 
 .sidebar .sidebar-content{
     flex: 1;
+    overflow: auto;
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar{
+    width: 6px;
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar-thumb{
+    background-color: #c1c1c1;
 }
 
 .sidebar .sidebar-content .sidebar-item{
