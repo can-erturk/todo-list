@@ -15,18 +15,6 @@ Object.prototype.on = function(e, handler) {
     })
 }
 
-$('[data-link]').forEach(el => {
-    el.on('click', () => {
-        $('#content .page.active').classList.remove('active')
-        
-        const link = el.getAttribute('data-link')
-        const name = el.getAttribute('data-name')
-        
-        $(`.page[data-page=${link}]`).classList.add('active')
-        $('.page-header .title').innerText = name;
-    })
-})
-
 // Sidebar open/close
 $('.sidebar-toggle').forEach(el => {
     el.on('click', () => {
