@@ -91,6 +91,19 @@ body{
     background-color: #c1c1c1;
 }
 
+.sidebar .sidebar-content .not-found{
+    text-align: center;
+    padding: 20px 0;
+    font-style: italic;
+    color: #898989;
+    font-size: 14px;
+    display: block;
+}
+
+.sidebar .sidebar-content:has(.sidebar-item) .not-found{
+    display: none;
+}
+
 .sidebar .sidebar-content .sidebar-item{
     height: 36px;
     overflow: hidden;
