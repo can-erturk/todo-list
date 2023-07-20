@@ -1,3 +1,4 @@
+// Element selector function
 Object.prototype.$ = function(target, node = document) {
     const query = node.querySelectorAll(target)
     if (query.length !== 0) {
@@ -7,6 +8,7 @@ Object.prototype.$ = function(target, node = document) {
     }
 }
 
+// Event listener function
 Object.prototype.on = function(e, handler) {
     this.addEventListener(e, () => {
         handler()
@@ -25,6 +27,7 @@ $('[data-link]').forEach(el => {
     })
 })
 
+// Sidebar open/close
 $('.sidebar-toggle').forEach(el => {
     el.on('click', () => {
         $('#sidebar').classList.toggle('sidebar-open')
