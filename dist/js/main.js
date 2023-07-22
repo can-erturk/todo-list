@@ -20,8 +20,8 @@ const sidebarTempItem = () => {
     </div>`
 }
 
-const sidebarPermItem = (name) => {
-    return `<div class="sidebar-item">
+const sidebarPermItem = (id, name) => {
+    return `<div class="sidebar-item" data-id="${id}">
         <span class="icon">
             <img src="./dist/img/icons/folder.svg">
         </span>
@@ -34,9 +34,12 @@ const sidebar = () => {
     const content = document.querySelector('#sidebarContent')
 
     // Save new list to localStorage
-    const setData = (name) => {
+    const setData = (id, name) => {
         let data = localStorage.getItem('sidebarData')
-        let newData = {"name": name}
+        let newData = {
+            "id": id,
+            "name": name
+        }
         
         let jsonData = data ? JSON.parse(data) : []
         jsonData.push(newData)
@@ -47,12 +50,13 @@ const sidebar = () => {
     // Add html element permanently
     const createPermElement = (itemName) => {
         content.removeChild(document.querySelector('.sidebar-item.new'))
+        const id = new Date().valueOf()
 
         const html = content.innerHTML
-        const newHtml = sidebarPermItem(itemName)
+        const newHtml = sidebarPermItem(id, itemName)
         content.innerHTML = newHtml + html
 
-        setData(itemName)
+        setData(id, itemName)
         window.removeEventListener('click', clickHandler)
     }
 
@@ -142,10 +146,13 @@ const initSidebar = () => {
     if (!sidebarData) return 
 
     for (let i = 0; i < sidebarData.length; i++) {
-        const html = document.querySelector('#sidebarContent').innerHTML
-        const newHtml = sidebarPermItem(sidebarData[i].name)
+        const id = sidebarData[i].id
+        const name = sidebarData[i].name
+        
+        const html = content.innerHTML
+        const newHtml = sidebarPermItem(id, name)
 
-        document.querySelector('#sidebarContent').innerHTML = newHtml + html
+        content.innerHTML = newHtml + html
     }
 }
 
