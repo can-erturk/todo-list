@@ -1,9 +1,12 @@
+// Sidebar open/close helper function
+const sidebarToggle = () => {
+    const sidebar = document.querySelector('#sidebar')
+    sidebar.classList.toggle('sidebar-open')
+}
+
 // Sidebar open/close
 document.querySelectorAll('.sidebar-toggle').forEach(el => {
-    el.addEventListener('click', () => {
-        const sidebar = document.querySelector('#sidebar')
-        sidebar.classList.toggle('sidebar-open')
-    })
+    el.addEventListener('click', sidebarToggle)
 })
 
 const sidebarTempItem = () => {
