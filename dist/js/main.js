@@ -138,10 +138,7 @@ const sidebar = () => {
             if (e.code === "Enter") enterHandler()
         }
     })
-}
 
-
-const initSidebar = () => {
     const sidebarData = JSON.parse(localStorage.getItem('sidebarData'))
     if (!sidebarData) return 
 
@@ -157,6 +154,12 @@ const initSidebar = () => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    initSidebar()
     sidebar()
 })
+
+
+// document.querySelectorAll('.list-content .list-item').forEach(el => {
+//     el.addEventListener('click', function(params) {
+//         el.classList.toggle('completed')
+//     })
+// });
