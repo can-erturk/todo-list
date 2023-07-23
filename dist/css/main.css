@@ -242,6 +242,17 @@ body{
 .content .list-content{
     flex-grow: 1;
     padding: 5px 15px;
+    overflow: auto;
+}
+
+.content .list-content::-webkit-scrollbar{
+    width: 14px;
+}
+
+.content .list-content::-webkit-scrollbar-thumb{
+    background-color: #c1c1c180;
+    border: 4px #fff solid;
+    border-radius: 12px;
 }
 
 .content .list-content .list-item{
