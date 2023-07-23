@@ -8,7 +8,7 @@
 <body>
     <div id="root">
 
-        <aside class="sidebar sidebar-open" id="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-content" id="sidebarContent">
                 <div class="not-found">No Result Found...</div>
             </div>
@@ -25,13 +25,24 @@
                 <span class="sidebar-toggle">
                     <img src="./dist/img/icons/menu-burger.svg" alt="">
                 </span>
-                <span class="title">To-do List</span>
+                <span class="title"></span>
+                <span class="add-new" id="addNew" title="Create new task">
+                    <img src="dist/img/icons/plus.svg" alt="">
+                </span>
             </div>
-            <div class="page active" data-page="todo">
-                todo
-            </div>
-            <div class="page" data-page="folders">
-                folders
+            <div class="list-content" id="listContent">
+                <div class="list-item">
+                    <input class="check-input" type="checkbox">
+                    <div class="todo">List item 1</div>
+                </div>
+                <div class="list-item">
+                    <input class="check-input" type="checkbox">
+                    <div class="todo">List item 2</div>
+                </div>
+                <div class="list-item">
+                    <input class="check-input" type="checkbox">
+                    <div class="todo">List item 3</div>
+                </div>
             </div>
         </main>
 

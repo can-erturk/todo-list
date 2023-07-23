@@ -159,3 +159,9 @@ const sidebar = () => {
 window.addEventListener('DOMContentLoaded', () => {
     sidebar()
 })
+
+document.querySelectorAll('.list-content .list-item').forEach(el => {
+    el.addEventListener('click', function(params) {
+        el.classList.toggle('completed')
+    })
+});
