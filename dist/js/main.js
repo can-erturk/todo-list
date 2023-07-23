@@ -40,12 +40,11 @@ const sidebar = () => {
     const setData = (id, name) => {
         let data = localStorage.getItem('sidebarData')
         let newData = {
-            "id": id,
             "name": name
         }
         
-        let jsonData = data ? JSON.parse(data) : []
-        jsonData.push(newData)
+        let jsonData = data ? JSON.parse(data) : {}
+        jsonData[id] = newData
 
         localStorage.setItem('sidebarData', JSON.stringify(jsonData))
     }
@@ -145,10 +144,10 @@ const sidebar = () => {
     const sidebarData = JSON.parse(localStorage.getItem('sidebarData'))
     if (!sidebarData) return 
 
-    for (let i = 0; i < sidebarData.length; i++) {
-        const id = sidebarData[i].id
-        const name = sidebarData[i].name
-        
+    for (const [key, val] of Object.entries(sidebarData)) {
+        const id = key
+        const name = val.name
+
         const html = content.innerHTML
         const newHtml = sidebarPermItem(id, name)
 
