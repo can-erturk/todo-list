@@ -255,6 +255,19 @@ body{
     border-radius: 12px;
 }
 
+.content .list-content .not-found{
+    text-align: center;
+    padding: 10px 0;
+    font-style: italic;
+    color: #898989;
+    font-size: 14px;
+    display: block;
+}
+
+.content .list-content:has(.list-item) .not-found{
+    display: none;
+}
+
 .content .list-content .list-item{
     /* min-height: 85px; */
     height: auto;
