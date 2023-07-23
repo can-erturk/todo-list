@@ -112,7 +112,6 @@ body{
     align-items: center;
     gap: 8px;
     padding: 0 15px;
-    font-size: 14px;
 }
 
 .sidebar .sidebar-content .sidebar-item:hover{
@@ -128,6 +127,10 @@ body{
     width: 13px;
     position: relative;
     top: 1px;
+}
+
+.sidebar .sidebar-content .sidebar-item .name{
+    font-size: 14px;
 }
 
 .sidebar .sidebar-content .sidebar-item.new *{
@@ -151,7 +154,7 @@ body{
     border-radius: 6px;
     padding: 6px;
     width: 120px;
-
+    font-size: 14px;
 }
 
 .sidebar .sidebar-content .sidebar-item.new .save-icon{
