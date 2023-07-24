@@ -287,6 +287,16 @@ body{
     border-bottom: solid 1px #d1d1d180;
 }
 
+.content .list-content .list-item.new .todo{
+    flex-grow: 1;
+}
+
+.content .list-content .list-item.new .todo input{
+    height: 100%;
+    font-size: 14px;
+    width: 100%;
+}
+
 .content .list-content .list-item .check-input {
     margin-left: -24px;
     width: 16px;
