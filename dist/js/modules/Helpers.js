@@ -27,6 +27,22 @@ class Helpers {
             <span class="name">${name}</span>
         </div>`
     }
+
+    static listTempItem(){
+        return `<div class="list-item new">
+            <input class="check-input" type="checkbox">
+            <div class="todo">
+                <input type="text" class="todo-input" placeholder="Enter a to-do...">
+            </div>
+        </div>`
+    }
+
+    static listPermItem(id, name){
+        return `<div class="list-item" data-id="${id}">
+            <input class="check-input" type="checkbox">
+            <div class="todo">${name}</div>
+        </div>`
+    }
 }
 
 export default Helpers
