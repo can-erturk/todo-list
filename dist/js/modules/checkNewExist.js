@@ -8,7 +8,6 @@ class CheckNewExist{
         if (newItem) {
             const newItemInput = newItem.querySelector('.name input')
             newItemInput.focus()
-            window.addEventListener('click', ClickHandler.sidebar)
             return true
         }else{
             return false
