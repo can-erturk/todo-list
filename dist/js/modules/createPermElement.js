@@ -2,11 +2,12 @@ import Helpers from "./Helpers.js"
 import SetData from "./setData.js"
 import ClickHandler from "./clickHandler.js"
 
-class CreatePermElement{
+class CreatePermElement {
     static sidebar(itemName){
         const content = document.querySelector('#sidebarContent')
+        const newItem = document.querySelector('.sidebar-item.new')
 
-        content.removeChild(document.querySelector('.sidebar-item.new'))
+        content.removeChild(newItem)
         const id = new Date().valueOf()
 
         const html = content.innerHTML

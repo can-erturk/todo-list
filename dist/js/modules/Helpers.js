@@ -1,11 +1,11 @@
-class Helpers{
+class Helpers {
     // Sidebar open/close helper function
-    static sidebarToggle = () => {
+    static sidebarToggle(){
         const sidebar = document.querySelector('#sidebar')
         sidebar.classList.toggle('sidebar-open')
     }
 
-    static sidebarTempItem = () => {
+    static sidebarTempItem(){
         return `<div class="sidebar-item new">
             <span class="icon">
                 <img src="./dist/img/icons/folder.svg">
@@ -19,7 +19,7 @@ class Helpers{
         </div>`
     }
 
-    static sidebarPermItem = (id, name) => {
+    static sidebarPermItem(id, name){
         return `<div class="sidebar-item" data-id="${id}">
             <span class="icon">
                 <img src="./dist/img/icons/folder.svg">

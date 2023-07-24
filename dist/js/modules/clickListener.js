@@ -1,10 +1,10 @@
 import CreateTempElement from "./createTempElement.js"
 import ClickHandler from "./clickHandler.js"
-import CheckNewExist from './checkNewExist.js';
-import EnterHandler from "./enterHandler.js";
+import CheckNewExist from './checkNewExist.js'
+import EnterHandler from "./enterHandler.js"
 
-class Sidebar {
-    static init(){    
+class ClickListener {
+    static sidebar(){    
         document.querySelector('#sidebarNewBtn').addEventListener('click', () => {
             // Do nothing if the new element has already been created
             if (CheckNewExist.sidebar()) return
@@ -15,10 +15,12 @@ class Sidebar {
             // Listen keyup event for enter key
             const input = document.querySelector('.sidebar-item.new .name input')
             input.onkeyup = (e) => {
-                if (e.code === "Enter") EnterHandler.sidebar()
+                if (e.code === "Enter"){
+                    EnterHandler.sidebar(input.value)
+                }
             }
         })
     }
 }
 
-export default Sidebar
+export default ClickListener

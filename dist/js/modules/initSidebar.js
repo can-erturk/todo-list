@@ -1,9 +1,9 @@
 import Helpers from "./Helpers.js"
-import Sidebar from "./Sidebar.js"
+import ClickListener from "./clickListener.js"
 
 class InitSidebar {
     static init(){
-        Sidebar.init()
+        ClickListener.sidebar()
 
         const content = document.querySelector('#sidebarContent')
         const sidebarData = JSON.parse(localStorage.getItem('sidebarData'))

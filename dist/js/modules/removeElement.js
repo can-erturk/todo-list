@@ -1,9 +1,12 @@
 import ClickHandler from "./clickHandler.js"
 
-class RemoveElement{
+class RemoveElement {
     // Remove temporary html element from DOM
     static sidebar(){
-        document.querySelector('#sidebarContent').removeChild(document.querySelector('#sidebarContent .sidebar-item.new'))
+        const content = document.querySelector('#sidebarContent')
+        const newItem = content.querySelector('.sidebar-item.new')
+
+        content.removeChild(newItem)
         window.removeEventListener('click', ClickHandler.sidebar)
     }
 }
