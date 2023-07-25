@@ -1,7 +1,14 @@
+import SetList from "./setList.js"
+
 class SetData {
     // Save new list to localStorage
     static setSidebarData(id, name){
         let data = localStorage.getItem('sidebarData')
+
+        if (!data) {
+            SetList.setActive(id, name)
+        }
+
         let newData = {
             "name": name
         }
