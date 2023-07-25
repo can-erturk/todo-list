@@ -43,6 +43,13 @@ class Helpers {
             <div class="todo">${name}</div>
         </div>`
     }
+
+    static listNotFound(){
+        return `<div class="list-not-found">
+            <span class="info">No List Found...</span>
+            <span class="info">Click the "create new" button <br> in the sidebar to create a new one.</span>
+        </div>`
+    }
 }
 
 export default Helpers

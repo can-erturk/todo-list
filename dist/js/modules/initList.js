@@ -5,6 +5,16 @@ class InitList {
     static init(){
         ClickListener.list()
 
+        const sidebarData = localStorage.getItem('sidebarData')
+        const listContent = document.querySelector('#listContent')
+        const addNewBtn = document.querySelector('#addNew')
+
+        if (!sidebarData) {
+            addNewBtn.classList.add('disabled')
+            listContent.innerHTML += Helpers.listNotFound()
+        }
+
+
         // const content = document.querySelector('#sidebarContent')
         // const sidebarData = JSON.parse(localStorage.getItem('sidebarData'))
         // if (!sidebarData) return 

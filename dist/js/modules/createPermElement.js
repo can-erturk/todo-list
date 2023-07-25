@@ -1,6 +1,7 @@
 import Helpers from "./Helpers.js"
 import SetData from "./setData.js"
 import ClickHandler from "./clickHandler.js"
+import RemoveElement from "./removeElement.js"
 
 class CreatePermElement {
     static sidebar(itemName){
@@ -16,6 +17,8 @@ class CreatePermElement {
 
         SetData.setSidebarData(id, itemName)
         window.removeEventListener('click', ClickHandler.sidebar)
+
+        RemoveElement.listContent()
     }
 
     static list(itemName){

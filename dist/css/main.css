@@ -240,6 +240,10 @@ body{
     top: 2px;
 }
 
+.content .header .add-new.disabled{
+    display: none !important;
+}
+
 .content .list-content{
     flex-grow: 1;
     padding: 5px 15px;
