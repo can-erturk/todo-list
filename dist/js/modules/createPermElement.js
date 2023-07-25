@@ -17,6 +17,21 @@ class CreatePermElement {
         SetData.setSidebarData(id, itemName)
         window.removeEventListener('click', ClickHandler.sidebar)
     }
+
+    static list(itemName){
+        const content = document.querySelector('#listContent')
+        const newItem = document.querySelector('.list-item.new')
+
+        content.removeChild(newItem)
+        const id = new Date().valueOf()
+
+        const html = content.innerHTML
+        const newHtml = Helpers.listPermItem(id, itemName)
+        content.innerHTML = newHtml + html
+
+        // SetData.setSidebarData(id, itemName)
+        window.removeEventListener('click', ClickHandler.list)
+    }
 }
 
 export default CreatePermElement

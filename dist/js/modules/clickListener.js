@@ -21,6 +21,24 @@ class ClickListener {
             }
         })
     }
+
+    static list(){
+        document.querySelector('#addNew').addEventListener('click', () => {
+            // Do nothing if the new element has already been created
+            if (CheckNewExist.list()) return
+    
+            CreateTempElement.list()
+            window.addEventListener('click', ClickHandler.list)
+            
+            // Listen keyup event for enter key
+            const input = document.querySelector('.list-item.new .todo input')
+            input.onkeyup = (e) => {
+                if (e.code === "Enter"){
+                    EnterHandler.list(input.value)
+                }
+            }
+        })
+    }
 }
 
 export default ClickListener

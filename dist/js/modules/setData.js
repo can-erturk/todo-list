@@ -8,8 +8,13 @@ class SetData {
         
         let jsonData = data ? JSON.parse(data) : {}
         jsonData[id] = newData
-
+        
         localStorage.setItem('sidebarData', JSON.stringify(jsonData))
+        this.createEmptyList(id)
+    }
+
+    static createEmptyList(id){
+        localStorage.setItem(id, '{}')
     }
 }
 

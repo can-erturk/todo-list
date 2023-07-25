@@ -28,6 +28,28 @@ class ClickHandler {
             RemoveElement.sidebar()
         }
     }
+
+    static list(e){
+        const input = document.querySelector('.list-item.new .todo input')
+        const value = input.value
+        const targetClass = e.target.className
+
+        const matches = targetClass.includes('add-new', 'add-new-img')
+        const includes = targetClass.includes('sidebar-toggle')
+
+        if (!matches && !includes) {
+            if (value.length > 0) {
+                CreatePermElement.list(value)
+            }else{
+                RemoveElement.list()
+            }
+        }
+        
+        // Delete temporary item if sidebar is closed
+        if (includes) {
+            RemoveElement.list()
+        }
+    }
 }
 
 export default ClickHandler

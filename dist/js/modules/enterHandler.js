@@ -7,6 +7,12 @@ class EnterHandler{
             CreatePermElement.sidebar(value)
         }
     }
+
+    static list(value){
+        if (value.length > 0) {
+            CreatePermElement.list(value)
+        }
+    }
 }
 
 export default EnterHandler

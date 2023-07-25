@@ -10,6 +10,17 @@ class CheckNewExist {
             return false
         }
     }
+
+    static list(){
+        const newItem = document.querySelector('.list-item.new')
+        
+        if (newItem) {
+            newItem.querySelector('.todo input').focus()
+            return true
+        }else{
+            return false
+        }
+    }
 }
 
 export default CheckNewExist

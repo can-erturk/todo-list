@@ -9,6 +9,14 @@ class RemoveElement {
         content.removeChild(newItem)
         window.removeEventListener('click', ClickHandler.sidebar)
     }
+
+    static list(){
+        const content = document.querySelector('#listContent')
+        const newItem = content.querySelector('.list-item.new')
+
+        content.removeChild(newItem)
+        window.removeEventListener('click', ClickHandler.list)
+    }
 }
 
 export default RemoveElement
