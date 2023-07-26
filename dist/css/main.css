@@ -260,20 +260,21 @@ body{
     border-radius: 12px;
 }
 
-.content .list-content .not-found{
-    text-align: center;
+.content .list-content::before{
+    content: 'Tasks Not Found...';
     padding: 10px 0;
     font-style: italic;
     color: #898989;
-    font-size: 14px;
     display: block;
+    text-align: center;
+    font-size: 14px;
 }
 
-.content .list-content:has(.list-item) .not-found{
+.content .list-content:has(.list-item)::before{
     display: none;
 }
 
-.content .list-content:has(.list-not-found) .not-found{
+.content .list-content:has(.list-not-found)::before{
     display: none;
 }
 
