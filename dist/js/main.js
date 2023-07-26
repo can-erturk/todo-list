@@ -1,6 +1,7 @@
 import Helpers from "./modules/Helpers.js"
 import InitSidebar from "./modules/initSidebar.js"
 import InitList from "./modules/initList.js"
+import ToggleCompleted from "./modules/toggleCompleted.js"
 import SetList from "./modules/setList.js"
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +13,20 @@ window.addEventListener('DOMContentLoaded', () => {
     sidebarToggle.forEach(el => {
         el.addEventListener('click', Helpers.sidebarToggle)
     })
+
+    const toggleCompleted = (el) => {
+        const list = document.querySelector('#listContent')
+        const listId = list.getAttribute('data-id')
+        const itemId = el.getAttribute('data-id')
+
+        if (el.classList.contains('completed')) {
+            ToggleCompleted.setIncompleted(listId, itemId)
+        }else{
+            ToggleCompleted.setCompleted(listId, itemId)
+        }
+
+        el.classList.toggle('completed')
+    }
 
     const updateList = (el) => {
         const sidebarData = localStorage.getItem('sidebarData')
@@ -29,5 +44,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (targetClass.includes('sidebar-item')) {
             updateList(e.target)
         }
-    })    
+
+        if (targetClass.includes('list-item')) {
+            toggleCompleted(e.target)
+        }
+    })
 })

@@ -37,8 +37,10 @@ class Helpers {
         </div>`
     }
 
-    static listPermItem(id, name){
-        return `<div class="list-item" data-id="${id}">
+    static listPermItem(id, name, completed){
+        const completedClass = completed ? 'completed' : ''
+
+        return `<div class="list-item ${completedClass}" data-id="${id}">
             <input class="check-input" type="checkbox">
             <div class="todo">${name}</div>
         </div>`
