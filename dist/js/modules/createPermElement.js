@@ -32,7 +32,7 @@ class CreatePermElement {
         const newHtml = Helpers.listPermItem(id, itemName)
         content.innerHTML = newHtml + html
 
-        // SetData.setSidebarData(id, itemName)
+        SetData.addListData(id, itemName)
         window.removeEventListener('click', ClickHandler.list)
     }
 }

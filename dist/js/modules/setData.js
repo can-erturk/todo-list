@@ -5,10 +5,6 @@ class SetData {
     static setSidebarData(id, name){
         let data = localStorage.getItem('sidebarData')
 
-        if (!data) {
-            SetList.setActive(id, name)
-        }
-
         let newData = {
             "name": name
         }
@@ -18,10 +14,28 @@ class SetData {
         
         localStorage.setItem('sidebarData', JSON.stringify(jsonData))
         this.createEmptyList(id)
+
+        SetList.setActive(id, name)
     }
 
     static createEmptyList(id){
         localStorage.setItem(id, '{}')
+    }
+
+    static addListData(id, name){
+        const listContent = document.querySelector('#listContent')
+        const listId = listContent.getAttribute('data-id')
+        const listData = localStorage.getItem(listId)
+        
+        const newData = {
+            "name": name,
+            "completed": false
+        }
+        
+        const jsonData = JSON.parse(listData)
+        jsonData[id] = newData
+        
+        localStorage.setItem(listId, JSON.stringify(jsonData))
     }
 }
 

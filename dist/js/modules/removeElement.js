@@ -22,9 +22,12 @@ class RemoveElement {
         const content = document.querySelector('#listContent')
         const listNotFound = document.querySelector('.list-not-found')
         const addNewBtn = document.querySelector('#addNew')
+        
+        if (addNewBtn.classList.contains('disabled')) {
+            addNewBtn.classList.remove('disabled')
+        }
 
         if (listNotFound) {
-            addNewBtn.classList.remove('disabled')
             content.removeChild(listNotFound)
         }
     }
