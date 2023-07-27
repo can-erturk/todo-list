@@ -43,7 +43,13 @@ class ClickListener {
     static listenSidebarItems(){
         const sidebarItems = document.querySelectorAll('.sidebar-item')
         sidebarItems.forEach(el => {
-            el.addEventListener('click', () => {
+            el.addEventListener('click', (e) => {
+
+                if (e.target.classList.contains('remove')) {
+                    ClickHandler.removeSidebarItem(el)
+                    return
+                }
+
                 ClickHandler.updateList(el)
             })
         })
@@ -52,7 +58,13 @@ class ClickListener {
     static listenListItems(){
         const listItems = document.querySelectorAll('.list-item')
         listItems.forEach(el => {
-            el.addEventListener('click', () => {
+            el.addEventListener('click', (e) => {
+                
+                if (e.target.classList.contains('remove')) {
+                    ClickHandler.removeListItem(el)
+                    return
+                }
+
                 ClickHandler.toggleCompleted(el)
             })
         })

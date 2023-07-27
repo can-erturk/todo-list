@@ -11,7 +11,7 @@ class InitList {
 
         if (!sidebarData) {
             addNewBtn.classList.add('disabled')
-            listContent.innerHTML += Helpers.listNotFound()
+            listContent.innerHTML = Helpers.listNotFound()
         }
 
 

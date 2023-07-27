@@ -25,6 +25,9 @@ class Helpers {
                 <img src="./dist/img/icons/folder.svg">
             </span>
             <span class="name">${name}</span>
+            <span class="remove remove-span" title="Remove list">
+                <img src="./dist/img/icons/trash-xmark.svg" class="remove"/>
+            </span>
         </div>`
     }
 
@@ -43,6 +46,9 @@ class Helpers {
         return `<div class="list-item ${completedClass}" data-id="${id}">
             <input class="check-input" type="checkbox">
             <div class="todo">${name}</div>
+            <span class="remove remove-span" title="Remove task">
+                <img src="./dist/img/icons/trash-xmark.svg" class="remove"/>
+            </span>
         </div>`
     }
 

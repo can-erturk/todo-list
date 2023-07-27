@@ -2,6 +2,8 @@ import CreatePermElement from "./createPermElement.js"
 import RemoveElement from "./removeElement.js"
 import ToggleCompleted from "./toggleCompleted.js"
 import SetList from "./setList.js"
+import RemoveData from "./removeData.js"
+import Helpers from "./Helpers.js"
 
 class ClickHandler {
     // Listen click events.
@@ -75,6 +77,46 @@ class ClickHandler {
         localStorage.setItem('activeList', id)
 
         SetList.setActive(id, data[id].name)
+    }
+
+    static removeSidebarItem(el){
+        const activeList = document.querySelector('#listContent')
+        const activeListId = activeList.getAttribute('data-id')
+        const listId = el.getAttribute('data-id')
+        
+        RemoveData.removeSidebarData(listId)
+        
+        if (listId == activeListId) {
+            const sidebarData = localStorage.getItem('sidebarData')
+
+            if (sidebarData) {
+                const jsonData = JSON.parse(sidebarData)
+                const keys = Object.keys(jsonData)
+                const id = keys[keys.length-1]
+
+                SetList.setActive(id, jsonData[id].name)
+            }else{
+                const listContent = document.querySelector('#listContent')
+                const addNewBtn = document.querySelector('#addNew')
+                const titleElement = document.querySelector('.header .title')
+
+                addNewBtn.classList.add('disabled')
+                listContent.innerHTML = Helpers.listNotFound()
+                titleElement.innerHTML = ''
+            }
+        }
+
+        el.remove()
+    }
+
+    static removeListItem(el){
+        const list = document.querySelector('#listContent')
+        const listId = list.getAttribute('data-id')
+        const itemId = el.getAttribute('data-id')
+
+        RemoveData.removeListData(listId, itemId)
+        
+        el.remove()
     }
 }
 
