@@ -1,0 +1,13 @@
+++ liste yoksa yeni oluştur butonu eklenecek
+++ liste varsa
+    ++ bir tane liste varsa direkt o aktif edilecek
+    ++ birden fazla liste varsa son liste aktif edilecek
+++ liste datası kaydedilecek & getirilecek
+++ liste datası completed && incompleted olarak seçilebilecek
+
+++ event hataları çözülecek
+
+sidebar && list: drag-drop özelliği eklenecek
+sidebar && list: silme özelliği eklenecek
+
+27.07'de kesin bitirilmeye çalışılacak

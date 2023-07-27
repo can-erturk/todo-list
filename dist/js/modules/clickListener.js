@@ -39,6 +39,15 @@ class ClickListener {
             }
         })
     }
+
+    static listenListItems(){
+        const listItems = document.querySelectorAll('.list-item')
+        listItems.forEach(el => {
+            el.addEventListener('click', () => {
+                ClickHandler.toggleCompleted(el)
+            })
+        })
+    }
 }
 
 export default ClickListener

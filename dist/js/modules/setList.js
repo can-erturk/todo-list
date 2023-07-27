@@ -1,4 +1,5 @@
 import Helpers from "./Helpers.js"
+import ClickListener from "./clickListener.js"
 
 class SetList {
     static init(data){
@@ -32,6 +33,8 @@ class SetList {
             
             listContent.innerHTML = newHtml + html
         }
+
+        ClickListener.listenListItems()
     }
 }
 

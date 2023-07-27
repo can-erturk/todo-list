@@ -1,5 +1,6 @@
 import CreatePermElement from "./createPermElement.js"
 import RemoveElement from "./removeElement.js"
+import ToggleCompleted from "./toggleCompleted.js"
 
 class ClickHandler {
     // Listen click events.
@@ -49,6 +50,20 @@ class ClickHandler {
         if (includes) {
             RemoveElement.list()
         }
+    }
+
+    static toggleCompleted(el){
+        const list = document.querySelector('#listContent')
+        const listId = list.getAttribute('data-id')
+        const itemId = el.getAttribute('data-id')
+
+        if (el.classList.contains('completed')) {
+            ToggleCompleted.setIncompleted(listId, itemId)
+        }else{
+            ToggleCompleted.setCompleted(listId, itemId)
+        }
+
+        el.classList.toggle('completed')
     }
 }
 

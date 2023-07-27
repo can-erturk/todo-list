@@ -1,5 +1,6 @@
 import Helpers from "./Helpers.js"
 import SetData from "./setData.js"
+import ClickListener from "./clickListener.js"
 import ClickHandler from "./clickHandler.js"
 import RemoveElement from "./removeElement.js"
 
@@ -34,6 +35,8 @@ class CreatePermElement {
 
         SetData.addListData(id, itemName)
         window.removeEventListener('click', ClickHandler.list)
+
+        ClickListener.listenListItems()
     }
 }
 

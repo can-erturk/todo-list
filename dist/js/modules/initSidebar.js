@@ -21,6 +21,8 @@ class InitSidebar {
 
             content.innerHTML = newHtml + html
         }
+
+        ClickListener.listenSidebarItems()
     }
 }
 
