@@ -1,6 +1,7 @@
 import CreatePermElement from "./createPermElement.js"
 import RemoveElement from "./removeElement.js"
 import ToggleCompleted from "./toggleCompleted.js"
+import SetList from "./setList.js"
 
 class ClickHandler {
     // Listen click events.
@@ -64,6 +65,16 @@ class ClickHandler {
         }
 
         el.classList.toggle('completed')
+    }
+
+    static updateList(el){
+        const sidebarData = localStorage.getItem('sidebarData')
+        const data = JSON.parse(sidebarData)
+        const id = el.getAttribute('data-id')
+
+        localStorage.setItem('activeList', id)
+
+        SetList.setActive(id, data[id].name)
     }
 }
 

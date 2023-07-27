@@ -40,6 +40,15 @@ class ClickListener {
         })
     }
 
+    static listenSidebarItems(){
+        const sidebarItems = document.querySelectorAll('.sidebar-item')
+        sidebarItems.forEach(el => {
+            el.addEventListener('click', () => {
+                ClickHandler.updateList(el)
+            })
+        })
+    }
+
     static listenListItems(){
         const listItems = document.querySelectorAll('.list-item')
         listItems.forEach(el => {

@@ -20,6 +20,7 @@ class CreatePermElement {
         window.removeEventListener('click', ClickHandler.sidebar)
 
         RemoveElement.listContent()
+        ClickListener.listenSidebarItems()
     }
 
     static list(itemName){
