@@ -18,7 +18,7 @@ html{
 
 body{
     width: 325px;
-    height: 450px;
+    height: 475px;
     background-color: #fff;
     font-size: 16px;
 }
@@ -33,7 +33,7 @@ body{
 }
 
 .sidebar{
-    width: 200px;
+    width: 250px;
     height: 100%;
     border-right: solid 1px #d1d1d1da;
     display: flex;
@@ -175,21 +175,28 @@ body{
     border: solid 2px rgba(25, 25, 25, 0.8);
     border-radius: 6px;
     padding: 6px;
-    width: 120px;
+    width: 170px;
     font-size: 14px;
 }
 
 .sidebar .sidebar-content .sidebar-item.new .save-icon{
-    display: none;
-    padding: 3px 6px;
+    /* display: none; */
     cursor:copy;
     margin-left: auto;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .sidebar-content .sidebar-item.new .save-icon:hover{
+    background-color: rgba(0,0,0,.05);
 }
 
 .sidebar .sidebar-content .sidebar-item.new .save-icon img{
     width: 14px;
-    position: relative;
-    top: 2px;
+    height: auto;
 }
 
 .sidebar .sidebar-footer{
@@ -218,10 +225,11 @@ body{
 
 .content .header{
     height: 44px;
-    border-bottom: solid 1px #d1d1d1da;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     padding: 0 15px 2px 15px;
+    box-shadow: 0px 0px 10px #a4a4a460;
 }
 
 .content .header .sidebar-toggle{
@@ -269,17 +277,16 @@ body{
 
 .content .list-content{
     flex-grow: 1;
-    padding: 5px 15px;
+    padding: 10px 15px 0 15px;
     overflow: auto;
 }
 
 .content .list-content::-webkit-scrollbar{
-    width: 14px;
+    width: 6px;
 }
 
 .content .list-content::-webkit-scrollbar-thumb{
     background-color: #c1c1c180;
-    border: 4px #fff solid;
     border-radius: 12px;
 }
 
@@ -316,29 +323,21 @@ body{
     color: #898989;
 }
 
-.content .list-content .list-not-found .create-new{
-    display: block;
-    color: #0d6efd;
-    border: solid 1px #0d6efd;
-    font-size:14px;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
 .content .list-content .list-item{
-    height: 44px;
-    min-height: max-content;
+    height: auto;
+    min-height: 46px;
     display: flex;
     align-items: center;
     cursor: pointer;
     position: relative;
-    padding: 10px 0px 12px 24px;
+    padding: 6px 10px 8px 34px;
+    border: solid 1px #d1d1d180;
+    border-radius: 6px;
+    margin-top: 10px;
 }
 
-.content .list-content .list-item:not(:nth-last-of-type(1)){
-    border-bottom: solid 1px #d1d1d180;
+.content .list-content .list-item .todo{
+    font-size: 14px;
 }
 
 .content .list-content .list-item.new .todo{
@@ -352,6 +351,7 @@ body{
 }
 
 .content .list-content .list-item .check-input {
+    flex-shrink: 0;
     margin-left: -24px;
     width: 16px;
     height: 16px;
@@ -364,6 +364,7 @@ body{
     border-radius: 4px;
     margin-right: 10px;
     cursor: pointer;
+    margin-top: 2px;
 }
 
 .content .list-content .list-item.completed .check-input {
