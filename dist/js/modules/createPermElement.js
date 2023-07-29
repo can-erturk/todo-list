@@ -3,6 +3,7 @@ import SetData from "./setData.js"
 import ClickListener from "./clickListener.js"
 import ClickHandler from "./clickHandler.js"
 import RemoveElement from "./removeElement.js"
+import ReorderList from "./reorderList.js"
 
 class CreatePermElement {
     static sidebar(itemName){
@@ -38,6 +39,7 @@ class CreatePermElement {
         window.removeEventListener('click', ClickHandler.list)
 
         ClickListener.listenListItems()
+        ReorderList.listen()
     }
 }
 

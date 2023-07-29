@@ -43,7 +43,7 @@ class Helpers {
     static listPermItem(id, name, completed){
         const completedClass = completed ? 'completed' : ''
 
-        return `<div class="list-item ${completedClass}" data-id="${id}">
+        return `<div class="list-item ${completedClass}" data-id="${id}" draggable="true">
             <input class="check-input" type="checkbox">
             <div class="todo">${name}</div>
             <span class="remove remove-span" title="Remove task">

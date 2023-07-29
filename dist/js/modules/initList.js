@@ -1,10 +1,11 @@
 import Helpers from "./Helpers.js"
 import ClickListener from "./clickListener.js"
+import ReorderList from "./reorderList.js"
 
 class InitList {
     static init(){
         ClickListener.list()
-        ClickListener.ordering()
+        ReorderList.listen()
 
         const sidebarData = localStorage.getItem('sidebarData')
         const listContent = document.querySelector('#listContent')

@@ -256,7 +256,7 @@ body{
 .content .header .add-new{
     padding: 3px 8px 5px;
     margin-right: -8px;
-    margin-left: 15px;
+    margin-left: auto;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -273,34 +273,6 @@ body{
 
 .content .header .add-new.disabled{
     display: none !important;
-}
-
-.content .header .re-order-btn{
-    padding: 3px 8px 5px;
-    margin-right: -8px;
-    margin-left: auto;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.content .header .re-order-btn:hover{
-    background-color: rgba(0,0,0,.05);
-}
-
-.content .header .re-order-btn img{
-    width: 14px;
-    position: relative;
-    top: 2px;
-}
-
-/* Hide ".re-order-btn" if ".list-content .list-item:not(.new)" does not exist in ".content" */
-.content:not(:has(.list-content .list-item:not(.new))) .header .re-order-btn{
-    display: none;
-}
-
-/* Add "margin-left" to ".add-new" if ".list-content .list-item:not(.new)" does not exist in ".content" */
-.content:not(:has(.list-content .list-item:not(.new))) .header .add-new{
-    margin-left: auto;
 }
 
 .content .list-content{
@@ -422,36 +394,5 @@ body{
 }
 
 .content .list-content .list-item .remove-span:hover{
-    background-color: rgba(0,0,0,.05);
-}
-
-.content .list-content.re-ordering .list-item{
-    margin-right: 30px;
-}
-
-.content .list-content:not(.re-ordering) .list-item .re-order-span{
-    display: none;
-}
-
-.content .list-content.re-ordering .list-item .re-order-span{
-    height: 30px;
-    border-radius: 30px;
-    position: absolute;
-    right: -40px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content .list-content.re-ordering .list-item .re-order-span img{
-    width: 14px;
-    height: auto;
-    pointer-events: none;
-}
-
-.content .list-content.re-ordering .list-item .re-order-span:hover{
     background-color: rgba(0,0,0,.05);
 }

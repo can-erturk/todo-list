@@ -40,15 +40,6 @@ class ClickListener {
         })
     }
 
-    static ordering(){
-        const reOrder = document.querySelector('#reOrder')
-        const listContent = document.querySelector('#listContent')
-
-        reOrder.addEventListener('click', () => {
-            listContent.classList.toggle('re-ordering')
-        })
-    }
-
     static listenSidebarItems(){
         const sidebarItems = document.querySelectorAll('.sidebar-item')
         sidebarItems.forEach(el => {
