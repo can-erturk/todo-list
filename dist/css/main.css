@@ -275,7 +275,7 @@ body{
     display: none !important;
 }
 
-.content .header .re-order{
+.content .header .re-order-btn{
     padding: 3px 8px 5px;
     margin-right: -8px;
     margin-left: auto;
@@ -283,18 +283,18 @@ body{
     border-radius: 4px;
 }
 
-.content .header .re-order:hover{
+.content .header .re-order-btn:hover{
     background-color: rgba(0,0,0,.05);
 }
 
-.content .header .re-order img{
+.content .header .re-order-btn img{
     width: 14px;
     position: relative;
     top: 2px;
 }
 
-/* Hide ".re-order" if ".list-content .list-item:not(.new)" does not exist in ".content" */
-.content:not(:has(.list-content .list-item:not(.new))) .header .re-order{
+/* Hide ".re-order-btn" if ".list-content .list-item:not(.new)" does not exist in ".content" */
+.content:not(:has(.list-content .list-item:not(.new))) .header .re-order-btn{
     display: none;
 }
 
@@ -449,6 +449,7 @@ body{
 .content .list-content.re-ordering .list-item .re-order-span img{
     width: 14px;
     height: auto;
+    pointer-events: none;
 }
 
 .content .list-content.re-ordering .list-item .re-order-span:hover{
