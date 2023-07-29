@@ -256,7 +256,7 @@ body{
 .content .header .add-new{
     padding: 3px 8px 5px;
     margin-right: -8px;
-    margin-left: auto;
+    margin-left: 15px;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -275,10 +275,39 @@ body{
     display: none !important;
 }
 
+.content .header .re-order{
+    padding: 3px 8px 5px;
+    margin-right: -8px;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.content .header .re-order:hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+.content .header .re-order img{
+    width: 14px;
+    position: relative;
+    top: 2px;
+}
+
+/* Hide ".re-order" if ".list-content .list-item:not(.new)" does not exist in ".content" */
+.content:not(:has(.list-content .list-item:not(.new))) .header .re-order{
+    display: none;
+}
+
+/* Add "margin-left" to ".add-new" if ".list-content .list-item:not(.new)" does not exist in ".content" */
+.content:not(:has(.list-content .list-item:not(.new))) .header .add-new{
+    margin-left: auto;
+}
+
 .content .list-content{
     flex-grow: 1;
     padding: 10px 15px 0 15px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .content .list-content::-webkit-scrollbar{
@@ -334,6 +363,8 @@ body{
     border: solid 1px #d1d1d180;
     border-radius: 6px;
     margin-top: 10px;
+    margin-right: 0px;
+    transition: .1s margin-right ease;
 }
 
 .content .list-content .list-item .todo{
@@ -391,5 +422,35 @@ body{
 }
 
 .content .list-content .list-item .remove-span:hover{
+    background-color: rgba(0,0,0,.05);
+}
+
+.content .list-content.re-ordering .list-item{
+    margin-right: 30px;
+}
+
+.content .list-content:not(.re-ordering) .list-item .re-order-span{
+    display: none;
+}
+
+.content .list-content.re-ordering .list-item .re-order-span{
+    height: 30px;
+    border-radius: 30px;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .list-content.re-ordering .list-item .re-order-span img{
+    width: 14px;
+    height: auto;
+}
+
+.content .list-content.re-ordering .list-item .re-order-span:hover{
     background-color: rgba(0,0,0,.05);
 }

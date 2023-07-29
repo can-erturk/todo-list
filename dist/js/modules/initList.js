@@ -4,6 +4,7 @@ import ClickListener from "./clickListener.js"
 class InitList {
     static init(){
         ClickListener.list()
+        ClickListener.ordering()
 
         const sidebarData = localStorage.getItem('sidebarData')
         const listContent = document.querySelector('#listContent')

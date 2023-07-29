@@ -49,6 +49,9 @@ class Helpers {
             <span class="remove remove-span" title="Remove task">
                 <img src="./dist/img/icons/trash-xmark.svg" class="remove"/>
             </span>
+            <span class="re-order re-order-span">
+                <img src="./dist/img/icons/grip-dots.svg" class="re-order"/>
+            </span>
         </div>`
     }
 
