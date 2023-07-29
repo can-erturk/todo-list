@@ -396,3 +396,7 @@ body{
 .content .list-content .list-item .remove-span:hover{
     background-color: rgba(0,0,0,.05);
 }
+
+.content .list-content .list-item.item-re-ordering {
+    opacity: 0;
+}
