@@ -5,6 +5,17 @@ class Helpers {
         sidebar.classList.toggle('sidebar-open')
     }
 
+    static escapeSelfXSS(string){
+        var tagsToReplace = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;'
+        }
+        return string.replace(/[&<>]/g, (tag) => {
+            return tagsToReplace[tag] || tag
+        })
+    }
+    
     static sidebarTempItem(){
         return `<div class="sidebar-item new">
             <span class="icon">
@@ -20,11 +31,13 @@ class Helpers {
     }
 
     static sidebarPermItem(id, name){
+        const newName = this.escapeSelfXSS(name)
+
         return `<div class="sidebar-item" data-id="${id}">
             <span class="icon">
                 <img src="./dist/img/icons/folder.svg">
             </span>
-            <span class="name">${name}</span>
+            <span class="name">${newName}</span>
             <span class="remove remove-span" title="Remove list">
                 <img src="./dist/img/icons/trash-xmark.svg" class="remove"/>
             </span>
@@ -41,11 +54,12 @@ class Helpers {
     }
 
     static listPermItem(id, name, completed){
+        const newName = this.escapeSelfXSS(name)
         const completedClass = completed ? 'completed' : ''
 
         return `<div class="list-item ${completedClass}" data-id="${id}" draggable="true">
             <input class="check-input" type="checkbox">
-            <div class="todo">${name}</div>
+            <div class="todo">${newName}</div>
             <span class="remove remove-span" title="Remove task">
                 <img src="./dist/img/icons/trash-xmark.svg" class="remove"/>
             </span>
