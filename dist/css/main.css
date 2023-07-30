@@ -277,7 +277,7 @@ body{
 
 .content .list-content{
     flex-grow: 1;
-    padding: 10px 15px 0 15px;
+    padding: 10px 15px 20px 15px;
     overflow-y: auto;
     overflow-x: hidden;
 }

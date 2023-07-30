@@ -17,7 +17,9 @@ class CreateTempElement{
 
         const html = content.innerHTML
         const newHtml = Helpers.listTempItem()
-        content.innerHTML = newHtml + html
+        
+        content.innerHTML = html + newHtml
+        content.scrollTop = content.scrollHeight;
 
         document.querySelector('.list-item.new .todo input').focus()
     }

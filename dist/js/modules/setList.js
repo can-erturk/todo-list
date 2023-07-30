@@ -31,7 +31,7 @@ class SetList {
             const html = listContent.innerHTML
             const newHtml = Helpers.listPermItem(key, val.name, val.completed)
             
-            listContent.innerHTML = newHtml + html
+            listContent.innerHTML = html + newHtml
         }
 
         ClickListener.listenListItems()

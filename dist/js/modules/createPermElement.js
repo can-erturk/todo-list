@@ -33,7 +33,7 @@ class CreatePermElement {
 
         const html = content.innerHTML
         const newHtml = Helpers.listPermItem(id, itemName)
-        content.innerHTML = newHtml + html
+        content.innerHTML = html + newHtml
 
         SetData.addListData(id, itemName)
         window.removeEventListener('click', ClickHandler.list)

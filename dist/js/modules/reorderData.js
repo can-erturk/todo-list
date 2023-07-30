@@ -17,8 +17,7 @@ class ReorderData {
             }
         })
 
-        const reversedNewList = Object.fromEntries(Object.entries(newList).reverse())
-        this.set(listId, JSON.stringify(reversedNewList))
+        this.set(listId, JSON.stringify(newList))
     }
 
     static set(listId, newData){
