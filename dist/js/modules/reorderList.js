@@ -1,3 +1,5 @@
+import ReorderData from './reorderData.js'
+
 class ReorderList {
     static listen(){
         const listContent = document.querySelector(".list-content")
@@ -10,10 +12,13 @@ class ReorderList {
 
             el.addEventListener("dragend", () => {
                 el.classList.remove("item-re-ordering")
+                ReorderData.handle()
             })
         })
 
         const initlistContent = (e) => {
+            if (listContent.querySelector('.list-item.new')) return
+
             e.preventDefault()
             const draggingItem = document.querySelector(".item-re-ordering")
 
