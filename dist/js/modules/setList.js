@@ -26,6 +26,8 @@ class SetList {
         
         let listData = localStorage.getItem(id)
         listData = JSON.parse(listData)
+
+        localStorage.setItem('activeList', id)
         
         for (const [key, val] of Object.entries(listData)) {
             const html = listContent.innerHTML

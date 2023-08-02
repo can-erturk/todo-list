@@ -74,8 +74,6 @@ class ClickHandler {
         const data = JSON.parse(sidebarData)
         const id = el.getAttribute('data-id')
 
-        localStorage.setItem('activeList', id)
-
         SetList.setActive(id, data[id].name)
     }
 
