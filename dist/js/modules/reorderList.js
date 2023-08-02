@@ -26,8 +26,13 @@ class ReorderList {
                 ...listContent.querySelectorAll(".list-item:not(.item-re-ordering)")
             ]
 
+            let diff = 0
+            if ((listContent.scrollHeight - listContent.clientHeight) != 0) {
+                diff = listContent.scrollTop
+            }
+
             const nextItem = items.find(sibling => {
-                return e.clientY <= sibling.offsetHeight / 2 + sibling.offsetTop
+                return e.clientY + diff <= sibling.offsetHeight / 2 + sibling.offsetTop
             })
 
             listContent.insertBefore(draggingItem, nextItem)
