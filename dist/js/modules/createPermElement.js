@@ -22,6 +22,7 @@ class CreatePermElement {
 
         RemoveElement.listContent()
         ClickListener.listenSidebarItems()
+        Helpers.sidebarToggle()
     }
 
     static list(itemName){

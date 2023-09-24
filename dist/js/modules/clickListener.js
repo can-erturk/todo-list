@@ -2,6 +2,7 @@ import CreateTempElement from "./createTempElement.js"
 import ClickHandler from "./clickHandler.js"
 import CheckNewExist from './checkNewExist.js'
 import EnterHandler from "./enterHandler.js"
+import Helpers from "./Helpers.js"
 
 class ClickListener {
     static sidebar(){    
@@ -51,6 +52,7 @@ class ClickListener {
                 }
 
                 ClickHandler.updateList(el)
+                Helpers.sidebarToggle()
             })
         })
     }
