@@ -1,5 +1,6 @@
 import Helpers from "./Helpers.js"
 import ClickListener from "./clickListener.js"
+import ReorderList from "./reorderList.js"
 
 class SetList {
     static init(data){
@@ -37,6 +38,7 @@ class SetList {
         }
 
         ClickListener.listenListItems()
+        ReorderList.listen()
     }
 }
 
